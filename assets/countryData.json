@@ -40,37 +40,42 @@
     "x": "424",
     "y": "87"
   }, {
-    "file": 241,
+    "file": 238,
     "country": "Guatemala",
     "x": "240",
     "y": "247"
   }, {
-    "file": 277,
+    "file": 276,
     "country": "Haiti",
     "x": "285",
     "y": "240"
   }, {
-    "file": 279,
+    "file": 278,
     "country": "Jamaica",
     "x": "277",
     "y": "244"
   }, {
-    "file": 271,
+    "file": 264,
     "country": "Nicaragua",
     "x": "254",
     "y": "255"
   }, {
-    "file": 243,
+    "file": 282,
+    "country": "Honduras",
+    "x": "249",
+    "y": "251"
+  }, {
+    "file": 242,
     "country": "Panama",
     "x": "266",
     "y": "269"
   }, {
-    "file": 273,
+    "file": 272,
     "country": "Costa Rica",
     "x": "259",
     "y": "265"
   }, {
-    "file": 281,
+    "file": 280,
     "country": "Puerto Rico",
     "x": "309",
     "y": "243"
@@ -325,7 +330,7 @@
     "x": "586",
     "y": "203"
   }, {
-    "file": 283,
+    "file": 282,
     "country": "Iraq",
     "x": "595",
     "y": "190"
@@ -406,7 +411,7 @@
     "x": "443",
     "y": "250"
   }, {
-    "file": 293,
+    "file": 292,
     "country": "Guinea Bissau",
     "x": "445",
     "y": "260"
@@ -581,7 +586,7 @@
     "x": "845",
     "y": "179"
   }, {
-    "file": 237,
+    "file": 238,
     "country": "Taiwan",
     "x": "817",
     "y": "227"
