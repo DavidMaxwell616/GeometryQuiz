@@ -1,56 +1,137 @@
-fabric.Object.prototype.set({
-  transparentCorners: false,
-  cornerColor: 'rgba(102,153,255,0.5)',
-  cornerSize: 12,
-  padding: 5,
-});
-var canvas = (window._canvas = new fabric.Canvas('c'));
-var ctx = canvas.getContext('2d');
+var config = {
+  width: 1000,
+  height: 500,
+  type: Phaser.AUTO,
+  backgroundColor: '#5273AD',
+  parent: 'game',
+  scene: {
+    preload: preload,
+    create: create,
+    update: update,
+  }
+};
 
-var file = 'assets/shapes/1.svg';
-canvas.setBackgroundImage(file, canvas.renderAll.bind(canvas), {
-  backgroundImageOpacity: 0.5,
-  backgroundImageStretch: false,
-});
+var game = new Phaser.Game(config);
 
-// ctx.fillStyle = '#5273ad';
-// ctx.fillRect(0, 0, canvas.width, canvas.height);
+function create() {
 
-const data = readFile('../assets/countryData.json');
-const countries = JSON.parse(data);
+  countryData = this.cache.json.get('countryData');
+  country_keys = Object.keys(countryData);
+  maxxdaddy = this.add.image(this.game.config.width * 0.9, this.game.config.height * 0.95, 'maxxdaddy');
+  background = this.add.image(0, 0, 'background').setOrigin(0, 0);
+  background.name = 'background';
+  background.setInteractive();
+  dialog = this.add.image(this.game.config.width / 2 - 100, this.game.config.height * .8, 'dialog').setOrigin(0, 0);
+  start = this.add.image(this.game.config.width / 2 + 40, this.game.config.height * .92, 'start').setOrigin(0, 0);
+  start.name = 'start';
+  start.setInteractive();
+  this.input.on('gameobjectdown', onObjectClicked);
+  dialogText = this.add.text(this.game.config.width / 2 - 60, this.game.config.height * .83, 'GEOGRAPHY QUIZ', {
+    fontFamily: 'arial',
+    fontSize: '32px',
+    fontStyle: 'bold',
+    fill: '#ff4500'
+  });
 
-// fabric.Image.fromURL(data, function(img) {
-//   // add background image
-//   canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {
-//     scaleX: canvas.width / img.width,
-//     scaleY: canvas.height / img.height,
-//   });
-//   img.src = 'assets/shapes/1.svg';
-//   ctx.drawImage(svg, 0, 0);
-//   canvas.renderAll();
+  alertText = this.add.text(this.game.config.width / 2 - 40, this.game.config.height / 2 - 100, '', {
+    fontFamily: 'arial',
+    fontSize: '32px',
+    fontStyle: 'bold',
+    fill: '#ff0000'
+  });
+  alertText.visible = false;
 
-for (let index = 0; index < countries.length; index++) {
-  const country = countries[index];
-  var x = country.x;
-  var y = country.y;
-  var filePath = 'assets/shapes/' + country.file + '.svg';
-  fabric.loadSVGFromURL(filePath, function(objects, options) {
-    var group = fabric.util.groupSVGElements(objects, options);
-    group.set({
-      left: parseInt(country.x, 10),
-      top: parseInt(country.y, 10),
-      id: country.country,
-    });
-    canvas.add(group);
-    canvas.calcOffset();
-    canvas.renderAll();
+  timerBox = this.add.graphics();
+  timerBar = this.add.graphics();
+  timerBar2 = this.add.graphics();
+  timerBox.fillStyle(0x111111, 1);
+  timerBox.fillRect(this.game.config.width / 2 - 70, this.game.config.height - 90, 320, 30);
+  timerBar.fillStyle(0xff4500, 1);
+  timerBar.fillRect(this.game.config.width / 2 - 65, this.game.config.height - 85, 310, 20);
+  timerBar.visible = false;
+  timerBar2.visible = false;
+  timerBox.visible = false;
+}
+
+function onObjectClicked(pointer, gameObject) {
+  if (gameObject.name == 'start') {
+    startGame = true;
+    timerBar.visible = true;
+    timerBar2.visible = true;
+    timerBox.visible = true;
+    let config = this.scene.game.config;
+    dialogText.y = config.height - 60;
+    start.visible = false;
+    attemptStarted = false;
+  } else if (attemptStarted && gameObject.name == 'background') {
+    if (pointer.downX > country.x && pointer.downX < country.x + country.width &&
+      pointer.downY > country.y && pointer.downY < country.y + country.y + country.height)
+      correctAnswer(this.scene);
+    else
+      wrongAnswer(this.scene);
+  }
+}
+
+function correctAnswer(scene) {
+  alertText.visible = true;
+  alertText.setText('CORRECT!');
+  var timer = scene.time.addEvent({
+    delay: 2000, // ms
+    callback: callback => {
+      alertText.visible = false;
+      timerCount = 0;
+      attemptStarted = false;
+      drawCountry();
+      wait = false;
+      correctAnswers.push(country.country);
+    },
+    callbackScope: scene,
+    loop: false
+  });
+  wait = true;
+}
+
+function wrongAnswer(scene) {
+  alertText.visible = true;
+  alertText.setText('INCORRECT!');
+  var timer = scene.time.addEvent({
+    delay: 2000, // ms
+    callback: callback => {
+      alertText.visible = false;
+    },
+    callbackScope: scene,
+    loop: false
   });
 }
-// var x = country.x;
-// var y = country.y;
-// var svg = new Image();
-// svg.src = filePath;
-// svg.id = country.country;
-// ctx.drawImage(svg, x, y);
-//ctx.drawSvg(filePath, x, y);
-//}
+
+function drawCountry() {
+
+}
+
+function update() {
+  if (!startGame)
+    return;
+  if (lives > 0) {
+    if (timerCount < 320) {
+      if (!attemptStarted) {
+        var ran_key = country_keys[Math.floor(Math.random() * country_keys.length)];
+        country = countryData[ran_key];
+        attemptStarted = true;
+        timerCount = 0;
+        timerBar2.clear();
+        timerBar2.fillStyle(0x111111, 0.8);
+      }
+      if (!wait) {
+        timerBar2.fillRect((this.game.config.width / 2 + 250) - timerCount, this.game.config.height - 85, timerCount, 20);
+        timerCount++;
+      }
+    } else {
+      attemptStarted = false;
+      lives--;
+    }
+
+
+    dialogText.setText('Find: ' + country.country + '\nAttempts left: ' + lives + '\nCountries left: ' + (country_keys.length - correctAnswers.length));
+    dialogText.setFont('16px Arial');
+  }
+}

@@ -1,714 +1,998 @@
 [{
     "file": 10,
     "country": "Alaska",
+    "width": 104,
+    "height": 72,
     "x": "33",
     "y": "63"
   },
   {
     "file": 6,
     "country": "Canada",
+    "width": 236,
+    "height": 173,
     "x": "107",
     "y": "0"
   }, {
     "file": 4,
     "country": "USA",
+    "width": 156,
+    "height": 74,
     "x": "151",
     "y": "152"
   }, {
     "file": 8,
     "country": "Greenland",
+    "width": 160,
+    "height": 110,
     "x": "293",
     "y": "0"
   }, {
     "file": 12,
     "country": "Mexico",
+    "width": 81,
+    "height": 46,
     "x": "172",
     "y": "205"
   }, {
     "file": 14,
     "country": "Cuba",
+    "width": 21,
+    "height": 9,
     "x": "265",
     "y": "231"
   }, {
     "file": 16,
     "country": "Dominican Republic",
+    "width": 5,
+    "height": 3,
     "x": "295",
     "y": "241"
   }, {
     "file": 106,
     "country": "Iceland",
+    "width": 25,
+    "height": 11,
     "x": "424",
     "y": "87"
   }, {
     "file": 238,
     "country": "Guatemala",
+    "width": 7,
+    "height": 9,
     "x": "240",
     "y": "247"
   }, {
     "file": 276,
     "country": "Haiti",
+    "width": 9,
+    "height": 5,
     "x": "285",
     "y": "240"
   }, {
     "file": 278,
     "country": "Jamaica",
+    "width": 4,
+    "height": 3,
     "x": "277",
     "y": "244"
   }, {
     "file": 264,
     "country": "Nicaragua",
+    "width": 9,
+    "height": 9,
     "x": "254",
     "y": "255"
   }, {
     "file": 282,
     "country": "Honduras",
+    "width": 11,
+    "height": 12,
     "x": "249",
     "y": "251"
   }, {
     "file": 242,
     "country": "Panama",
+    "width": 11,
+    "height": 3,
     "x": "266",
     "y": "269"
   }, {
     "file": 272,
     "country": "Costa Rica",
+    "width": 4,
+    "height": 4,
     "x": "259",
     "y": "265"
   }, {
     "file": 280,
     "country": "Puerto Rico",
+    "width": 1,
+    "height": 2,
     "x": "309",
     "y": "243"
   }, {
     "file": 244,
     "country": "Venezuela",
+    "width": 32,
+    "height": 27,
     "x": "292",
     "y": "264"
   }, {
     "file": 242,
     "country": "Colombia",
+    "width": 29,
+    "height": 36,
     "x": "276",
     "y": "264"
   }, {
     "file": 246,
     "country": "Guyana",
+    "width": 10,
+    "height": 16,
     "x": "324",
     "y": "273"
   }, {
     "file": 248,
     "country": "Suriname",
+    "width": 9,
+    "height": 8,
     "x": "332",
     "y": "278"
   }, {
     "file": 250,
     "country": "French Guyana",
+    "width": 6,
+    "height": 4,
     "x": "342",
     "y": "281"
   }, {
     "file": 186,
     "country": "Brazil",
+    "width": 107,
+    "height": 105,
     "x": "288",
     "y": "280"
   }, {
     "file": 256,
     "country": "Bolivia",
+    "width": 30,
+    "height": 34,
     "x": "302",
     "y": "320"
   }, {
     "file": 262,
     "country": "Argentina",
+    "width": 47,
+    "height": 91,
     "x": "292",
     "y": "353"
   }, {
     "file": 254,
     "country": "Peru",
+    "width": 33,
+    "height": 47,
     "x": "269",
     "y": "295"
   }, {
     "file": 264,
     "country": "Uraguay",
+    "width": 14,
+    "height": 13,
     "x": "331",
     "y": "376"
   }, {
     "file": 258,
     "country": "Paraguay",
+    "width": 21,
+    "height": 21,
     "x": "320",
     "y": "346"
   }, {
     "file": 260,
     "country": "Chile",
+    "width": 17,
+    "height": 67,
     "x": "289",
     "y": "342"
   }, {
     "file": 252,
     "country": "Ecuador",
+    "width": 16,
+    "height": 16,
     "x": "269",
     "y": "290"
   }, {
     "file": 236,
     "country": "Russia",
+    "width": 434,
+    "height": 147,
     "x": "565",
     "y": "30"
   }, {
     "file": 200,
     "country": "Kazakhstan",
+    "width": 107,
+    "height": 48,
     "x": "618",
     "y": "131"
   }, {
     "file": 116,
     "country": "Norway",
+    "width": 61,
+    "height": 53,
     "x": "505",
     "y": "66"
   }, {
     "file": 118,
     "country": "Sweden",
+    "width": 34,
+    "height": 56,
     "x": "521",
     "y": "73"
   }, {
     "file": 102,
     "country": "Great Britain",
+    "width": 26,
+    "height": 30,
     "x": "468",
     "y": "118"
   }, {
     "file": 104,
     "country": "Ireland",
+    "width": 10.25,
+    "height": 10,
     "x": "464",
     "y": "134"
   }, {
     "file": 120,
     "country": "Finland",
+    "width": 24,
+    "height": 42,
     "x": "549",
     "y": "70"
   }, {
     "file": 114,
     "country": "France",
+    "width": 32,
+    "height": 27,
     "x": "479",
     "y": "147"
   }, {
     "file": 108,
     "country": "Spain",
+    "width": 32,
+    "height": 23,
     "x": "466",
     "y": "170"
   }, {
     "file": 110,
     "country": "Portugal",
+    "width": 9,
+    "height": 16,
     "x": "464",
     "y": "175"
   }, {
     "file": 112,
     "country": "Italy",
+    "width": 30,
+    "height": 31,
     "x": "508",
     "y": "160"
   }, {
     "file": 2,
     "country": "Switzerland",
+    "width": 8,
+    "height": 6,
     "x": "509",
     "y": "157"
   }, {
     "file": 136,
     "country": "Luxembourg",
+    "width": 2,
+    "height": 3,
     "x": "504",
     "y": "148"
   }, {
     "file": 126,
     "country": "Germany",
+    "width": 23,
+    "height": 27,
     "x": "507",
     "y": "132"
   }, {
     "file": 152,
     "country": "Macedonia",
+    "width": 2,
+    "height": 2,
     "x": "548",
     "y": "175"
   }, {
     "file": 134,
     "country": "Austria",
+    "width": 11,
+    "height": 7,
     "x": "525",
     "y": "153"
   }, {
     "file": 130,
     "country": "Poland",
+    "width": 25,
+    "height": 20,
     "x": "529",
     "y": "133"
   }, {
     "file": 124,
     "country": "Netherlands",
+    "width": 7,
+    "height": 7,
     "x": "502",
     "y": "138"
   }, {
     "file": 122,
     "country": "Denmark",
+    "width": 9,
+    "height": 7,
     "x": "513",
     "y": "124"
   }, {
     "file": 138,
     "country": "Slovakia",
+    "width": 8,
+    "height": 4,
     "x": "537",
     "y": "152"
   }, {
     "file": 140,
     "country": "Hungary",
+    "width": 14,
+    "height": 7,
     "x": "536",
     "y": "155"
   }, {
     "file": 142,
     "country": "Romania",
+    "width": 21,
+    "height": 15,
     "x": "547",
     "y": "156"
   }, {
     "file": 144,
     "country": "Bulgaria",
+    "width": 14,
+    "height": 6,
     "x": "551",
     "y": "171"
   }, {
     "file": 156,
     "country": "Croatia",
+    "width": 7,
+    "height": 7,
     "x": "534",
     "y": "166"
   }, {
     "file": 150,
     "country": "Albania",
+    "width": 3,
+    "height": 8,
     "x": "543",
     "y": "174"
   }, {
     "file": 148,
     "country": "Greece",
+    "width": 9,
+    "height": 14,
     "x": "546",
     "y": "177"
   }, {
     "file": 154,
     "country": "Bosnia",
+    "width": 11,
+    "height": 13,
     "x": "540",
     "y": "162"
   }, {
     "file": 158,
     "country": "Slovenia",
+    "width": 8,
+    "height": 6,
     "x": "527",
     "y": "160"
   }, {
     "file": 132,
     "country": "Czech Republic",
+    "width": 16,
+    "height": 8,
     "x": "524",
     "y": "146"
   }, {
     "file": 160,
     "country": "Ukraine",
+    "width": 47,
+    "height": 26,
     "x": "551",
     "y": "141"
   }, {
     "file": 162,
     "country": "Belarus",
+    "width": 21,
+    "height": 16,
     "x": "555",
     "y": "128"
   }, {
     "file": 164,
     "country": "Lithuania",
+    "width": 12,
+    "height": 8,
     "x": "548",
     "y": "127"
   }, {
     "file": 166,
     "country": "Latvia",
+    "width": 17,
+    "height": 6,
     "x": "548",
     "y": "121"
   }, {
     "file": 146,
     "country": "Turkey",
+    "width": 49,
+    "height": 19,
     "x": "561",
     "y": "175"
   }, {
     "file": 172,
     "country": "Syria",
+    "width": 13,
+    "height": 12,
     "x": "588",
     "y": "192"
   }, {
     "file": 176,
     "country": "Israel",
+    "width": 3,
+    "height": 10,
     "x": "584",
     "y": "202"
   }, {
     "file": 174,
     "country": "Jordan",
+    "width": 9,
+    "height": 10,
     "x": "586",
     "y": "203"
   }, {
     "file": 282,
     "country": "Iraq",
+    "width": 26,
+    "height": 24,
     "x": "595",
     "y": "190"
   }, {
     "file": 282,
     "country": "Azerbaijan",
+    "width": 11,
+    "height": 10,
     "x": "613",
     "y": "176"
   }, {
     "file": 26,
     "country": "Egypt",
+    "width": 28,
+    "height": 26,
     "x": "558",
     "y": "208"
   }, {
     "file": 24,
     "country": "Libya",
+    "width": 43,
+    "height": 38,
     "x": "515",
     "y": "203"
   }, {
     "file": 20,
     "country": "Algeria",
+    "width": 54,
+    "height": 50,
     "x": "467",
     "y": "192"
   }, {
     "file": 18,
     "country": "Morocco",
+    "width": 42,
+    "height": 40,
     "x": "444",
     "y": "196"
   }, {
     "file": 22,
     "country": "Tunisia",
+    "width": 9,
+    "height": 20,
     "x": "511",
     "y": "190"
   }, {
     "file": 40,
     "country": "Mauritania",
+    "width": 30,
+    "height": 32,
     "x": "445",
     "y": "221"
   }, {
     "file": 178,
     "country": "Saudi Arabia",
+    "width": 56,
+    "height": 42,
     "x": "585",
     "y": "207"
   }, {
     "file": 284,
     "country": "Yemen",
+    "width": 26,
+    "height": 15,
     "x": "632",
     "y": "227"
   },
   {
     "file": 180,
     "country": "Oman",
+    "width": 19,
+    "height": 21,
     "x": "607",
     "y": "244"
   }, {
     "file": 294,
     "country": "Eritrea",
+    "width": 16,
+    "height": 13,
     "x": "590",
     "y": "247"
   }, {
     "file": 28,
     "country": "Sudan",
-    "x": "550",
-    "y": "231"
+    "width": 100,
+    "height": 100,
+    "x": "44",
+    "y": "52"
   }, {
     "file": 32,
     "country": "Ethiopia",
+    "width": 36,
+    "height": 28,
     "x": "582",
     "y": "255"
   }, {
     "file": 30,
     "country": "Somali Republic",
+    "width": 27,
+    "height": 35,
     "x": "602",
     "y": "262"
   }, {
     "file": 48,
     "country": "Senegal",
+    "width": 15,
+    "height": 10,
     "x": "443",
     "y": "250"
   }, {
     "file": 292,
     "country": "Guinea Bissau",
+    "width": 5,
+    "height": 4,
     "x": "445",
     "y": "260"
   }, {
     "file": 50,
     "country": "Guinea",
+    "width": 17,
+    "height": 13,
     "x": "450",
     "y": "260"
   }, {
     "file": 54,
     "country": "Liberia",
+    "width": 9,
+    "height": 8,
     "x": "460",
     "y": "272"
   }, {
     "file": 56,
     "country": "Ivory Coast",
+    "width": 14,
+    "height": 13,
     "x": "469",
     "y": "267"
   }, {
     "file": 52,
     "country": "Sierra Leone",
+    "width": 7,
+    "height": 8,
     "x": "455",
     "y": "267"
   }, {
     "file": 58,
     "country": "Ghana",
+    "width": 7,
+    "height": 15,
     "x": "483",
     "y": "265"
   }, {
     "file": 100,
     "country": "Burkina Faso",
+    "width": 20,
+    "height": 14,
     "x": "475",
     "y": "253"
   }, {
     "file": 294,
     "country": "Togo",
+    "width": 5,
+    "height": 8,
     "x": "488",
     "y": "271"
   }, {
     "file": 60,
     "country": "Benin",
+    "width": 6,
+    "height": 15,
     "x": "493",
     "y": "262"
   }, {
     "file": 62,
     "country": "Nigeria",
+    "width": 30,
+    "height": 23,
     "x": "498",
     "y": "258"
   }, {
     "file": 44,
     "country": "Niger",
+    "width": 41,
+    "height": 29,
     "x": "491",
     "y": "231"
   }, {
     "file": 42,
     "country": "Mali",
+    "width": 44,
+    "height": 38,
     "x": "458",
     "y": "227"
   }, {
     "file": 46,
     "country": "Chad",
+    "width": 27,
+    "height": 42,
     "x": "527",
     "y": "231"
   }, {
     "file": 66,
     "country": "Central African Republic",
+    "width": 32,
+    "height": 20,
     "x": "531",
     "y": "265"
   }, {
     "file": 64,
     "country": "Cameroon",
+    "width": 19,
+    "height": 20,
     "x": "514",
     "y": "268"
   }, {
     "file": 72,
     "country": "Equitorial Guinea",
+    "width": 5,
+    "height": 4,
     "x": "516",
     "y": "287"
   }, {
     "file": 70,
     "country": "Gabon",
+    "width": 13,
+    "height": 14,
     "x": "516",
     "y": "288"
   }, {
     "file": 90,
     "country": "Congo",
+    "width": 17,
+    "height": 21,
     "x": "522",
     "y": "284"
   }, {
     "file": 68,
     "country": "Democratic Republic of Congo",
+    "width": 51,
+    "height": 47,
     "x": "523",
     "y": "279"
   }, {
     "file": 36,
     "country": "Uganda",
+    "width": 13,
+    "height": 12,
     "x": "571",
     "y": "284"
   }, {
     "file": 34,
     "country": "Kenya",
+    "width": 19,
+    "height": 22,
     "x": "583",
     "y": "282"
   }, {
     "file": 38,
     "country": "Tanzania",
+    "width": 31,
+    "height": 27,
     "x": "569",
     "y": "297"
   }, {
     "file": 74,
     "country": "Angola",
+    "width": 32,
+    "height": 31,
     "x": "523",
     "y": "309"
   }, {
     "file": 86,
     "country": "Zambia",
+    "width": 30,
+    "height": 24,
     "x": "550",
     "y": "316"
   }, {
     "file": 82,
     "country": "Zimbabwe",
+    "width": 20,
+    "height": 17,
     "x": "560",
     "y": "336"
   }, {
     "file": 84,
     "country": "Mozambique",
+    "width": 27,
+    "height": 39,
     "x": "573",
     "y": "323"
   }, {
     "file": 92,
     "country": "Madagascar",
+    "width": 18,
+    "height": 35,
     "x": "608",
     "y": "327"
   }, {
     "file": 88,
     "country": "Rwanda",
+    "width": 8,
+    "height": 19,
     "x": "579",
     "y": "138"
   }, {
     "file": 80,
     "country": "Botswana",
+    "width": 24,
+    "height": 23,
     "x": "545",
     "y": "342"
   }, {
     "file": 76,
     "country": "Namibia",
+    "width": 24,
+    "height": 33,
     "x": "523",
     "y": "339"
   }, {
     "file": 78,
     "country": "South Africa",
+    "width": 41,
+    "height": 36,
     "x": "536",
     "y": "353"
   }, {
     "file": 194,
     "country": "China",
+    "width": 166,
+    "height": 102,
     "x": "690",
     "y": "137"
   }, {
     "file": 222,
     "country": "North Korea",
+    "width": 14,
+    "height": 14,
     "x": "829",
     "y": "174"
   }, {
     "file": 224,
     "country": "South Korea",
+    "width": 7,
+    "height": 11,
     "x": "834",
     "y": "187"
   }, {
     "file": 226,
     "country": "Japan",
+    "width": 30,
+    "height": 26,
     "x": "845",
     "y": "179"
   }, {
     "file": 238,
     "country": "Taiwan",
-    "x": "817",
-    "y": "227"
+    "width": 100,
+    "height": 100,
+    "x": "3",
+    "y": "6"
   }, {
     "file": 280,
     "country": "Iraq",
+    "width": 26,
+    "height": 24,
     "x": "595",
     "y": "190"
   }, {
     "file": 188,
     "country": "Iran",
+    "width": 50,
+    "height": 41,
     "x": "610",
     "y": "184"
   }, {
     "file": 184,
     "country": "Afghanistan",
+    "width": 29,
+    "height": 25,
     "x": "655",
     "y": "188"
   }, {
     "file": 190,
     "country": "Turkmenistan",
+    "width": 36,
+    "height": 22,
     "x": "634",
     "y": "174"
   }, {
     "file": 192,
     "country": "Uzbekistan",
+    "width": 33,
+    "height": 24,
     "x": "643",
     "y": "165"
   }, {
     "file": 202,
     "country": "Tajikistan",
+    "width": 19,
+    "height": 8,
     "x": "674",
     "y": "183"
   }, {
     "file": 198,
     "country": "Kyrgyzstan",
+    "width": 21,
+    "height": 13,
     "x": "682",
     "y": "171"
   }, {
     "file": 170,
     "country": "Georgia",
+    "width": 12,
+    "height": 6,
     "x": "603",
     "y": "172"
   },
   {
     "file": 96,
     "country": "India",
+    "width": 76,
+    "height": 75,
     "x": "677",
     "y": "197"
   }, {
     "file": 196,
     "country": "Nepal",
+    "width": 19,
+    "height": 9,
     "x": "709",
     "y": "212"
   }, {
     "file": 228,
     "country": "Mongolia",
+    "width": 85,
+    "height": 34,
     "x": "729",
     "y": "142"
   }, {
     "file": 182,
     "country": "Pakistan",
+    "width": 39,
+    "height": 37,
     "x": "660",
     "y": "192"
   }, {
     "file": 206,
     "country": "Bangladesh",
+    "width": 11,
+    "height": 12,
     "x": "730",
     "y": "223"
   }, {
     "file": 208,
     "country": "Myanmar",
+    "width": 20,
+    "height": 33,
     "x": "741",
     "y": "218"
   }, {
     "file": 210,
     "country": "Thailand",
+    "width": 22,
+    "height": 36,
     "x": "755",
     "y": "239"
   }, {
     "file": 218,
     "country": "Malaysia",
+    "width": 51,
+    "height": 15,
     "x": "763",
     "y": "276"
   }, {
     "file": 234,
     "country": "Phillipines",
+    "width": 18,
+    "height": 34,
     "x": "816",
     "y": "244"
   }, {
     "file": 216,
     "country": "Cambodia",
+    "width": 15,
+    "height": 11,
     "x": "767",
     "y": "255"
   }, {
     "file": 214,
     "country": "Vietnam",
+    "width": 18,
+    "height": 37,
     "x": "769",
     "y": "232"
   }, {
     "file": 212,
     "country": "Laos",
+    "width": 18,
+    "height": 19,
     "x": "764",
     "y": "235"
   }, {
     "file": 220,
     "country": "Indonesia",
+    "width": 122,
+    "height": 35,
     "x": "750",
     "y": "280"
   }, {
     "file": 230,
     "country": "New Guinea",
+    "width": 23,
+    "height": 19,
     "x": "874",
     "y": "300"
   }, {
     "file": 94,
     "country": "Australia",
+    "width": 108,
+    "height": 78,
     "x": "798",
     "y": "324"
   }, {
     "file": 98,
     "country": "New Zealand",
+    "width": 32,
+    "height": 30,
     "x": "943",
     "y": "396"
   }
