@@ -8,46 +8,79 @@ var config = {
     preload: preload,
     create: create,
     update: update,
-  }
+  },
 };
 
 var game = new Phaser.Game(config);
 
 function create() {
-
   countryData = this.cache.json.get('countryData');
   country_keys = Object.keys(countryData);
-  maxxdaddy = this.add.image(this.game.config.width * 0.9, this.game.config.height * 0.95, 'maxxdaddy');
+  maxxdaddy = this.add.image(
+    this.game.config.width * 0.9,
+    this.game.config.height * 0.95,
+    'maxxdaddy',
+  );
   background = this.add.image(0, 0, 'background').setOrigin(0, 0);
   background.name = 'background';
   background.setInteractive();
-  dialog = this.add.image(this.game.config.width / 2 - 100, this.game.config.height * .8, 'dialog').setOrigin(0, 0);
-  start = this.add.image(this.game.config.width / 2 + 40, this.game.config.height * .92, 'start').setOrigin(0, 0);
+  dialog = this.add
+    .image(
+      this.game.config.width / 2 - 100,
+      this.game.config.height * 0.8,
+      'dialog',
+    )
+    .setOrigin(0, 0);
+  start = this.add
+    .image(
+      this.game.config.width / 2 + 40,
+      this.game.config.height * 0.92,
+      'start',
+    )
+    .setOrigin(0, 0);
   start.name = 'start';
   start.setInteractive();
   this.input.on('gameobjectdown', onObjectClicked);
-  dialogText = this.add.text(this.game.config.width / 2 - 60, this.game.config.height * .83, 'GEOGRAPHY QUIZ', {
-    fontFamily: 'arial',
-    fontSize: '32px',
-    fontStyle: 'bold',
-    fill: '#ff4500'
-  });
+  dialogText = this.add.text(
+    this.game.config.width / 2 - 60,
+    this.game.config.height * 0.83,
+    'GEOGRAPHY QUIZ', {
+      fontFamily: 'arial',
+      fontSize: '32px',
+      fontStyle: 'bold',
+      fill: '#ff4500',
+    },
+  );
 
-  alertText = this.add.text(this.game.config.width / 2 - 40, this.game.config.height / 2 - 100, '', {
-    fontFamily: 'arial',
-    fontSize: '32px',
-    fontStyle: 'bold',
-    fill: '#ff0000'
-  });
+  alertText = this.add.text(
+    this.game.config.width / 2 - 40,
+    this.game.config.height / 2 - 100,
+    '', {
+      fontFamily: 'arial',
+      fontSize: '32px',
+      fontStyle: 'bold',
+      fill: '#ff0000',
+    },
+  );
   alertText.visible = false;
 
   timerBox = this.add.graphics();
   timerBar = this.add.graphics();
   timerBar2 = this.add.graphics();
   timerBox.fillStyle(0x111111, 1);
-  timerBox.fillRect(this.game.config.width / 2 - 70, this.game.config.height - 90, 320, 30);
+  timerBox.fillRect(
+    this.game.config.width / 2 - 70,
+    this.game.config.height - 90,
+    320,
+    30,
+  );
   timerBar.fillStyle(0xff4500, 1);
-  timerBar.fillRect(this.game.config.width / 2 - 65, this.game.config.height - 85, 310, 20);
+  timerBar.fillRect(
+    this.game.config.width / 2 - 65,
+    this.game.config.height - 85,
+    310,
+    20,
+  );
   timerBar.visible = false;
   timerBar2.visible = false;
   timerBox.visible = false;
@@ -64,57 +97,64 @@ function onObjectClicked(pointer, gameObject) {
     start.visible = false;
     attemptStarted = false;
   } else if (attemptStarted && gameObject.name == 'background') {
-    if (pointer.downX > country.x && pointer.downX < country.x + country.width &&
-      pointer.downY > country.y && pointer.downY < country.y + country.y + country.height)
-      correctAnswer(this.scene);
-    else
-      wrongAnswer(this.scene);
+    if (
+      pointer.downX > country.x &&
+      pointer.downX < country.x + country.width &&
+      pointer.downY > country.y &&
+      pointer.downY < country.y + country.y + country.height
+    )
+      correctAnswer(this);
+    else wrongAnswer(this);
   }
 }
 
-function correctAnswer(scene) {
+function correctAnswer(game) {
   alertText.visible = true;
   alertText.setText('CORRECT!');
-  var timer = scene.time.addEvent({
+  game.scene.time.addEvent({
     delay: 2000, // ms
     callback: callback => {
       alertText.visible = false;
       timerCount = 0;
       attemptStarted = false;
-      drawCountry();
+      drawCountry(game);
       wait = false;
       correctAnswers.push(country.country);
     },
-    callbackScope: scene,
-    loop: false
+    callbackScope: game.scene,
+    loop: false,
   });
   wait = true;
 }
 
-function wrongAnswer(scene) {
+function wrongAnswer(game) {
   alertText.visible = true;
   alertText.setText('INCORRECT!');
-  var timer = scene.time.addEvent({
+  game.scene.time.addEvent({
     delay: 2000, // ms
     callback: callback => {
       alertText.visible = false;
     },
-    callbackScope: scene,
-    loop: false
+    callbackScope: game.scene,
+    loop: false,
   });
 }
 
-function drawCountry() {
-
+function drawCountry(game) {
+  let scene = game.scene;
+  console.log(scene);
+  cty = scene.load.image('assets/shapes/' + country.key + '.svg');
+  // scene.load.start();
+  scene.load.onLoadComplete.add(countryLoaded, this);
 }
 
 function update() {
-  if (!startGame)
-    return;
+  if (!startGame) return;
   if (lives > 0) {
     if (timerCount < 320) {
       if (!attemptStarted) {
-        var ran_key = country_keys[Math.floor(Math.random() * country_keys.length)];
+        var ran_key =
+          country_keys[Math.floor(Math.random() * country_keys.length)];
         country = countryData[ran_key];
         attemptStarted = true;
         timerCount = 0;
@@ -122,16 +162,28 @@ function update() {
         timerBar2.fillStyle(0x111111, 0.8);
       }
       if (!wait) {
-        timerBar2.fillRect((this.game.config.width / 2 + 250) - timerCount, this.game.config.height - 85, timerCount, 20);
+        timerBar2.fillRect(
+          this.game.config.width / 2 + 250 - timerCount,
+          this.game.config.height - 85,
+          timerCount,
+          20,
+        );
         timerCount++;
       }
     } else {
       attemptStarted = false;
       lives--;
+      timerCount = 0;
     }
 
-
-    dialogText.setText('Find: ' + country.country + '\nAttempts left: ' + lives + '\nCountries left: ' + (country_keys.length - correctAnswers.length));
+    dialogText.setText(
+      'Find: ' +
+      country.country +
+      '\nAttempts left: ' +
+      lives +
+      '\nCountries left: ' +
+      (country_keys.length - correctAnswers.length),
+    );
     dialogText.setFont('16px Arial');
   }
 }
