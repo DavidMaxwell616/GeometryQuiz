@@ -12,28 +12,68 @@ var config = {
 
 var game = new Phaser.Game(config);
 
-let country;
+let country = {
+  "file": 10,
+  "country": "Alaska",
+  "width": 104,
+  "height": 72,
+  "x": "33",
+  "y": "63"
+};
 
 function preload() {
-  this.load.image('start', '../assets/start.png');
+  // showLoader(this);
+  this.load.path = '../assets/shapes/';
+  this.load.image('background', '1.svg');
 
+  this.load.path = '../assets/';
+  countries = this.load.json('countryData', 'countryData.json');
+  this.load.image('maxxdaddy', 'maxxdaddy.gif');
+  this.load.image('start', 'start.png');
+  this.load.image('dialog', 'dialog.png');
+
+  this.scale.pageAlignHorizontally = true;
+  this.scale.pageAlignVertically = true;
+  this.scale.refresh();
 }
 
-function drawCountry(game, key) {
+function drawCountry(game) {
 
   let scene = game.scene;
-  cty = scene.add.image('assets/shapes/' + key + '.svg');
-  // console.log(cty);
+  let key = country.file;
+  let url = '../assets/shapes/' + key + '.svg';
 
-  //  scene.load.onLoadComplete.add(countryLoaded, this);
-  var graphics = scene.add.graphics();
-  graphics.lineStyle(5, 0xFF00FF, 1.0);
-  graphics.beginPath();
-  graphics.moveTo(100, 100);
-  graphics.lineTo(200, 200);
-  graphics.closePath();
-  graphics.strokePath();
+  scene.load.image(key, url);
+  scene.load.once('complete', () => {
+    //var src = scene.textures.get(key).getSourceImage();
+
+    //var canvas = scene.textures.createCanvas('map_' + key, src.width, src.height).draw(0, 0, src);
+    // var data = canvas.imageData;
+    // console.log(data);
+    // var img = new Image();
+    // img.src = data;
+    scene.add.image(country.x, country.y, key);
+    // canvas.refresh();
+
+    // var pixel = new Phaser.Display.Color();
+    // var xOffset = country.x;
+    // for (var y = 0; y < src.height; y++) {
+    //   for (var x = 0; x < src.width; x++) {
+    //     canvas.getPixel(x, y, pixel);
+    //     if (pixel.a > 0) {
+    //       scene.add.rectangle(x + 33, y + 63, 1, 1, pixel.color);
+    //     }
+    //   }
+    // }
+  });
+
+  game.scene.load.start(); // start loading
+
+
 }
+
+
+
 
 function create() {
   start = this.add
@@ -50,6 +90,53 @@ function create() {
 
 function onObjectClicked(pointer, gameObject) {
   if (gameObject.name == 'start') {
-    drawCountry(this, 1);
+    drawCountry(this);
   }
+}
+
+function showLoader(game) {
+  var progressBar = game.add.graphics();
+  var progressBox = game.add.graphics();
+  progressBox.fillStyle(0x222222, 0.8);
+  progressBox.fillRect(340, 270, 320, 50);
+  game.load.on('progress', function (value) {});
+
+  game.load.on('fileprogress', function (file) {});
+
+  game.load.on('complete', function () {
+    progressBar.destroy();
+    progressBox.destroy();
+    loadingText.destroy();
+    percentText.destroy();
+  });
+  game.load.on('progress', function (value) {
+    progressBar.clear();
+    progressBar.fillStyle(0xff4500, 1);
+    progressBar.fillRect(350, 280, 300 * value, 30);
+    percentText.setText(parseInt(value * 100) + '%');
+  });
+
+  var width = game.cameras.main.width;
+  var height = game.cameras.main.height;
+  var loadingText = game.make.text({
+    x: width / 2,
+    y: height / 2 - 50,
+    text: 'Loading...',
+    style: {
+      font: '20px monospace',
+      fill: '#ffffff'
+    }
+  });
+  loadingText.setOrigin(0.5, 0.5);
+
+  var percentText = game.make.text({
+    x: width / 2,
+    y: height / 2 - 5,
+    text: '0%',
+    style: {
+      font: '18px monospace',
+      fill: '#ffffff'
+    }
+  });
+  percentText.setOrigin(0.5, 0.5);
 }

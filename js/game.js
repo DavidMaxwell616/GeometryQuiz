@@ -15,7 +15,7 @@ var game = new Phaser.Game(config);
 
 function create() {
   countryData = this.cache.json.get('countryData');
-  country_keys = Object.keys(countryData);
+  //country_keys = Object.keys(countryData);
   maxxdaddy = this.add.image(
     this.game.config.width * 0.9,
     this.game.config.height * 0.95,
@@ -141,11 +141,18 @@ function wrongAnswer(game) {
 }
 
 function drawCountry(game) {
+  // console.log(country.x, country.y);
+  // console.log(country);
   let scene = game.scene;
-  console.log(scene);
-  cty = scene.load.image('assets/shapes/' + country.key + '.svg');
-  // scene.load.start();
-  scene.load.onLoadComplete.add(countryLoaded, this);
+  let key = country.file;
+  let url = '../assets/shapes/' + key + '.svg';
+  scene.load.image(key, url);
+  scene.load.once('complete', () => {
+    scene.add.image(country.x, country.y, key);
+  });
+
+  game.scene.load.start();
+
 }
 
 function update() {
@@ -153,8 +160,10 @@ function update() {
   if (lives > 0) {
     if (timerCount < 320) {
       if (!attemptStarted) {
-        var ran_key =
-          country_keys[Math.floor(Math.random() * country_keys.length)];
+        // var ran_key =
+        //   country_keys[Math.floor(Math.random() * country_keys.length)];
+        //console.log(countryData);
+        let ran_key = 10;
         country = countryData[ran_key];
         attemptStarted = true;
         timerCount = 0;
@@ -182,7 +191,7 @@ function update() {
       '\nAttempts left: ' +
       lives +
       '\nCountries left: ' +
-      (country_keys.length - correctAnswers.length),
+      (countryData.keys.count - correctAnswers.length),
     );
     dialogText.setFont('16px Arial');
   }
