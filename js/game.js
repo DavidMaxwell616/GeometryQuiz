@@ -15,7 +15,6 @@ var game = new Phaser.Game(config);
 
 function create() {
   countryData = this.cache.json.get('countryData');
-  //country_keys = Object.keys(countryData);
   maxxdaddy = this.add.image(
     this.game.config.width * 0.9,
     this.game.config.height * 0.95,
@@ -148,7 +147,9 @@ function drawCountry(game) {
   let url = '../assets/shapes/' + key + '.svg';
   scene.load.image(key, url);
   scene.load.once('complete', () => {
-    scene.add.image(country.x, country.y, key);
+    const xOffset = 2.575;
+    const yOffset = 1.575;
+    scene.add.image(country.x, country.y, key).setOrigin(0, 0);
   });
 
   game.scene.load.start();
@@ -160,11 +161,10 @@ function update() {
   if (lives > 0) {
     if (timerCount < 320) {
       if (!attemptStarted) {
-        // var ran_key =
-        //   country_keys[Math.floor(Math.random() * country_keys.length)];
-        //console.log(countryData);
-        let ran_key = 10;
-        country = countryData[ran_key];
+        country =
+          countryData[Math.floor(Math.random() * countryData.length)];
+        //   country = countryData[3];
+        console.log(country);
         attemptStarted = true;
         timerCount = 0;
         timerBar2.clear();

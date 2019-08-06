@@ -19,4 +19,3 @@ let correctAnswers = [];
 let current_country;
 let wait = false;
 let cty;
-let countries = [];
