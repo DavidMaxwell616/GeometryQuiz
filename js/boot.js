@@ -15,7 +15,6 @@ let attemptStarted = false;
 let alertText;
 let alertCounter = 5000;
 let correctAnswers = [];
-//let country_keys;
-let current_country;
+let countries;
 let wait = false;
 let cty;

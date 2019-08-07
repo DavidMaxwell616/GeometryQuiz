@@ -83,10 +83,12 @@ function create() {
   timerBar.visible = false;
   timerBar2.visible = false;
   timerBox.visible = false;
+  countries = this.add.group();
 }
 
 function onObjectClicked(pointer, gameObject) {
   if (gameObject.name == 'start') {
+    alertText.setText('');
     startGame = true;
     timerBar.visible = true;
     timerBar2.visible = true;
@@ -100,7 +102,7 @@ function onObjectClicked(pointer, gameObject) {
       pointer.downX > country.x &&
       pointer.downX < country.x + country.width &&
       pointer.downY > country.y &&
-      pointer.downY < country.y + country.y + country.height
+      pointer.downY < country.y + country.height
     )
       correctAnswer(this);
     else wrongAnswer(this);
@@ -110,15 +112,17 @@ function onObjectClicked(pointer, gameObject) {
 function correctAnswer(game) {
   alertText.visible = true;
   alertText.setText('CORRECT!');
+  alertText.setDepth(1);
+  tmpCountry = country;
   game.scene.time.addEvent({
     delay: 2000, // ms
     callback: callback => {
       alertText.visible = false;
       timerCount = 0;
       attemptStarted = false;
-      drawCountry(game);
+      drawCountry(game, tmpCountry);
       wait = false;
-      correctAnswers.push(country.country);
+      correctAnswers.push(country);
     },
     callbackScope: game.scene,
     loop: false,
@@ -129,6 +133,7 @@ function correctAnswer(game) {
 function wrongAnswer(game) {
   alertText.visible = true;
   alertText.setText('INCORRECT!');
+  alertText.setDepth(1);
   game.scene.time.addEvent({
     delay: 2000, // ms
     callback: callback => {
@@ -139,7 +144,7 @@ function wrongAnswer(game) {
   });
 }
 
-function drawCountry(game) {
+function drawCountry(game, tmpCountry) {
   // console.log(country.x, country.y);
   // console.log(country);
   let scene = game.scene;
@@ -147,13 +152,23 @@ function drawCountry(game) {
   let url = '../assets/shapes/' + key + '.svg';
   scene.load.image(key, url);
   scene.load.once('complete', () => {
-    const xOffset = 2.575;
-    const yOffset = 1.575;
-    scene.add.image(country.x, country.y, key).setOrigin(0, 0);
+    //console.log(tmpCountry.country, tmpCountry.x, tmpCountry.y);
+    const img = scene.add.image(tmpCountry.x, tmpCountry.y, key).setOrigin(0.0, 0.0);
+    countries.add(img);
+    //scene.add.image(country.x, country.y, key).setOrigin(0.5, 0.5);
   });
 
   game.scene.load.start();
 
+}
+
+function getCountry() {
+  let rand = null;
+
+  while (rand === null || correctAnswers.includes(rand)) {
+    rand = countryData[Math.floor(Math.random() * countryData.length)];
+  }
+  return rand;
 }
 
 function update() {
@@ -161,10 +176,9 @@ function update() {
   if (lives > 0) {
     if (timerCount < 320) {
       if (!attemptStarted) {
-        country =
-          countryData[Math.floor(Math.random() * countryData.length)];
-        //   country = countryData[3];
-        console.log(country);
+        country = getCountry();
+        // country = countryData[21];
+        // console.log(country);
         attemptStarted = true;
         timerCount = 0;
         timerBar2.clear();
@@ -184,15 +198,41 @@ function update() {
       lives--;
       timerCount = 0;
     }
-
+    let percent = (correctAnswers.length / countryData.length * 100).toFixed(2);;
     dialogText.setText(
       'Find: ' +
       country.country +
       '\nAttempts left: ' +
       lives +
-      '\nCountries left: ' +
-      (countryData.keys.count - correctAnswers.length),
+      '\nCorrect Answers: ' +
+      correctAnswers.length + ' - ' + percent + '%',
     );
     dialogText.setFont('16px Arial');
+  } else {
+    alertText.visible = true;
+    alertText.setText('GAME OVER!');
+    this.time.addEvent({
+      delay: 5000, // ms
+      callback: callback => {
+        alertText.visible = false;
+        this.game.config.width / 2 - 100,
+          this.game.config.height * 0.8,
+          dialogText.setText('GEOGRAPHY QUIZ');
+        dialogText.setPosition(this.game.config.width / 2 - 60,
+          this.game.config.height * 0.83);
+        dialogText.setFont('bold 32px Arial');
+        start.visible = true;
+        start.setInteractive();
+        startGame = false;
+        timerBox.visible = false;
+        timerBar.visible = false;
+        timerBar2.visible = false;
+        lives = 5;
+        correctAnswers = [];
+        countries.clear(true);
+      },
+      callbackScope: game.scene,
+      loop: false,
+    });
   }
 }
